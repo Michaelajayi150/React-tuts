@@ -15,7 +15,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: start;
-  width: 50%;
+  width: 60%;
   height: 80vh;
   margin: 4rem auto;
   text-align: center;
@@ -32,7 +32,7 @@ body {
   outline: none;
   background: transparent;
   color: #fff;
-  margin: 16px 0;
+  margin: 26px 0 16px;
 }
 
 .todo-input::placeholder {
@@ -99,11 +99,125 @@ body {
 }
 
 .sidebar {
+  width: 230px;
+  height: 100%;
+  padding: 60px 0;
+  display: flex;
+  flex-direction: column;
+  background: #15171c;
   position: fixed;
+  top: 0px;
+  right: -100%;
+  transition: 350ms;
+}
+
+.menu-bars a {
+  display: flex;
+  font-size: 1.5rem;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
   top: 6px;
-  right: 100%;
+  right: 6px;
+  color: #fff;
+  background-color: #15171c;
+  padding: 5px;
 }
 
 .sidebar.active {
   right: 0;
+}
+
+.sub-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  list-style: none;
+  width: 90%;
+  height: 40px;
+  padding: 10px;
+  font-size: 16px;
+  color: #fff;
+}
+
+.sub-menu:hover {
+  background: #252831;
+  border-left: 4px solid #632ce4;
+}
+
+.dropdown-icon {
+  font-size: 18px;
+  margin-right: 14px;
+}
+
+.drop-down {
+  max-height: 138px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  white-space: nowrap;
+}
+
+.drop-down-menu.active {
+  background-color: #ff0e0e;
+  position: relative;
+  animation: deleted 1.3s forwards;
+  animation-iteration-count: 1;
+}
+
+@keyframes deleted {
+  from {
+    left: 0%;
+  }
+  to {
+    left: -100%;
+  }
+}
+
+.drop-down-menu.active:hover {
+  background: #ff0e0e;
+}
+
+.drop-down-menu {
+  background: #414757;
+  color: #fff;
+  height: 40px;
+  padding: 3px 10px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.drop-down-menu:hover {
+  background: #632ce4;
+}
+
+.menu-value {
+  width: 75%;
+}
+
+.btn-complete {
+  text-transform: uppercase;
+  padding: 0 5px;
+  margin: 7px 0 0;
+  background: transparent;
+  font-size: 17px;
+}
+
+.btn-delete {
+  padding: 0 5px;
+  margin: 7px 0 0;
+  background: transparent;
+  font-size: 17px;
+}
+
+@media screen and (max-width: 800px) {
+  .todo-container {
+    width: 80%;
+  }
+
+  .todo-list {
+    width: 90%;
+  }
 }
