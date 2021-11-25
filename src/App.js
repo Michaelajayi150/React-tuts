@@ -5,7 +5,7 @@ import Sidebar from './components/sidebar';
 import TodoList from './components/todoList';
 
 function App() {
-    const [input, setInput] = useState([]); //Stores data for Input
+    const [input, setInput] = useState([]); //Stores data for all Input
     const [completeInput, setCompleteInput] = useState([])
     const [incompleteInput, setIncompleteInput] = useState([])
     const [deleteInput, setDeleteInput] = useState([])
@@ -31,6 +31,7 @@ function App() {
             // }
             
         setInput(prev => prev.map(item => (item.id === todoId ? {id: item.id, cName: item.cName,value: newValue} : item)))
+        setIncompleteInput(prev => prev.map(item => (item.id === todoId ? {id: item.id, cName: item.cName,value: newValue} : item)))
             
         inputElement.current.value = '';
     }
