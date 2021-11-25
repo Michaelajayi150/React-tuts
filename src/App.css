@@ -54,6 +54,10 @@ body {
   text-transform: capitalize;
 }
 
+.todolist-container {
+  overflow-y: auto;
+}
+
 .todo-list {
   display: flex;
   justify-content: space-between;

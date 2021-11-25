@@ -38,27 +38,29 @@ function TodoList({
   return (
     <div className="todo-container">
       <Todo handleSubmit={handleSubmit} inputElement={inputElement} tab="Add todo" />
-      {input.map((item, index) => {
-        return (
-            <div className="todo-list" key={index}>
-            <span className="todo-item">{item.value}</span>
-            <div className="todo-item-btn">
-              <button
-                className="btn btn-success"
-                onClick={() => setEdit({ id: item.id, value: item.value })}
-              >
-                Edit
-              </button>
-              <button
-                className="btn btn-danger"
-                onClick={() => handleDelete(item)}
-              >
-                Delete
-              </button>
-            </div>
-          </div>
-        );
-      })}
+			<div className="todolist-container">	
+				{input.map((item, index) => {
+					return (
+							<div className="todo-list" key={index}>
+							<span className="todo-item">{item.value}</span>
+							<div className="todo-item-btn">
+								<button
+									className="btn btn-success"
+									onClick={() => setEdit({ id: item.id, value: item.value })}
+								>
+									Edit
+								</button>
+								<button
+									className="btn btn-danger"
+									onClick={() => handleDelete(item)}
+									>
+									Delete
+								</button>
+							</div>
+						</div>
+					);
+				})}
+			</div>
     </div>
   );
 }
