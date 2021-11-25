@@ -221,3 +221,22 @@ body {
     width: 90%;
   }
 }
+
+@media screen and (max-width: 800px) {
+  .todo-btn {
+    border-radius: 4px;
+    margin-bottom: 30px;
+  }
+
+  .todo-list {
+    padding: 12px;
+  }
+
+  .btn-danger {
+    margin: 0;
+  }
+
+  .todo-item {
+    width: 83px;
+  }
+}
