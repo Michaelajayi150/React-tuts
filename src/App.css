@@ -77,6 +77,8 @@ body {
 
 .todo-item {
   width: 60%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .todo-item-btn {
@@ -199,6 +201,8 @@ body {
 
 .menu-value {
   width: 75%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .btn-complete {

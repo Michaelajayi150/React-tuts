@@ -30,7 +30,7 @@ function TodoList({
         ) : (
           <div className="todo-container">
       			<Todo handleSubmit={handleSubmit} inputElement={inputElement} tab="Add todo" />
-					</div>
+			</div>
         )}
         </>
     )}

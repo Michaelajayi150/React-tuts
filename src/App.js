@@ -26,9 +26,9 @@ function App() {
     }
 
     const updateTodo = (todoId, newValue) => {
-        // if (!newValue.value || /^\s*$/.test(newValue.value)) {
-            //     return;
-            // }
+        if (!newValue || /^\s*$/.test(newValue)) {
+            return;
+         }
             
         setInput(prev => prev.map(item => (item.id === todoId ? {id: item.id, cName: item.cName,value: newValue} : item)))
         setIncompleteInput(prev => prev.map(item => (item.id === todoId ? {id: item.id, cName: item.cName,value: newValue} : item)))
